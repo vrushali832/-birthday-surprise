@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Happpyyy Birthdayyy! 🎂</title>
+<style>
+:root{--site-primary:#ff78ad;--site-on-primary:#43152f;--site-secondary:#ffe16a;--site-on-secondary:#432d00;--site-background:#fff2f8;--site-on-background:#48243b;--site-font-body:"Trebuchet MS",Arial,sans-serif;--site-font-heading:"Trebuchet MS",Arial,sans-serif;--site-heading-scale:1;--site-spacing-scale:1;--site-radius-scale:1;--site-decoration-opacity:1}
+*{box-sizing:border-box}body{margin:0;font-family:var(--site-font-body);background:#fff2f8;color:#48243b}#app{min-height:100vh;position:relative;isolation:isolate;overflow:hidden;text-align:center;padding:28px 18px 38px;background-color:var(--site-background);color:var(--site-on-background)}main{width:min(100%,650px);margin:auto;position:relative;z-index:1}.pill{display:inline-block;background:var(--site-secondary);color:var(--site-on-secondary);padding:9px 15px;border-radius:99px;font-weight:800;transform:rotate(-2deg)}h1{font-size:clamp(2.5rem,10vw,4.7rem);line-height:1.03;letter-spacing:-.04em;margin:24px 0 12px}.rainbow{background:linear-gradient(90deg,#f04e98,#a55eea,#319de0,#21aa86,#f0a323);color:transparent;background-clip:text;-webkit-background-clip:text}.intro{line-height:1.7;font-size:1.05rem;max-width:470px;margin:0 auto}.cake{width:184px;height:184px;margin:26px auto;display:grid;place-items:center;border-radius:50%;background:#ffe0ee;border:3px dashed #ff78ad;font-size:96px;animation:bob 2.5s ease-in-out infinite;position:relative}.cake:before{content:"✨";position:absolute;top:12px;left:12px;font-size:26px}.cake:after{content:"💖";position:absolute;right:12px;bottom:12px;font-size:25px}@keyframes bob{50%{transform:translateY(-8px) rotate(2deg)}}.card{padding:24px 20px;border-radius:26px;border:2px solid #ffd0e4;background:#ffffffdd;box-shadow:0 12px 35px #a63c711c}.card h2{margin:0 0 12px}.card p{line-height:1.75}.btn{border:0;margin-top:14px;padding:15px 22px;border-radius:99px;background:#ff78ad;color:#43152f;font:inherit;font-weight:900;box-shadow:0 6px 0 #ce4e84;cursor:pointer}.hidden{display:none;line-height:1.8;font-size:1.2rem;animation:pop .4s ease}.hidden.show{display:block}@keyframes pop{from{opacity:0;transform:scale(.8)}to{opacity:1;transform:scale(1)}}.confetti{position:absolute;top:-20px;width:9px;height:15px;border-radius:3px;animation:fall linear infinite;opacity:var(--site-decoration-opacity);z-index:0;pointer-events:none}@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}.balloon{position:absolute;bottom:-80px;font-size:35px;animation:float 13s linear infinite;opacity:var(--site-decoration-opacity);z-index:0;pointer-events:none}@keyframes float{to{transform:translateY(-120vh) rotate(25deg)}}.note{font-size:.85rem;opacity:.8;margin-top:24px}@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body><div id="app"><div id="confetti" aria-hidden="true"></div>
+<span class="balloon" style="left:8%;animation-delay:-3s">🎈</span><span class="balloon" style="left:80%;animation-delay:-8s">🎉</span><span class="balloon" style="left:48%;animation-delay:-5s">💖</span>
+<main><span class="pill">✨ A LITTLE SURPRISE FOR YOU ✨</span>
+<h1>Happpyyy<br><span class="rainbow">Birthdayyy!</span> 🎂</h1>
+<p class="intro">Today is all about smiles, silly moments, extra cake and a whole lot of happiness! 🥳</p>
+<div class="cake">🎂</div>
+<section class="card"><h2>🎁 Wait… there's more!</h2><p>Someone wanted to send you a tiny bundle of birthday happiness. Ready to open it?</p>
+<button class="btn" id="open">Tap for a surprise! 🎉</button>
+<div class="hidden" id="message" aria-live="polite"><p>May your year be full of big laughs, good people, unexpected wins and little moments that make you go “hehehe!” 💗🧁✨</p><strong>Stay happy, stay your wonderfully silly self! 🌈</strong></div></section>
+<p class="note">Made with a little extra sparkle ✨</p></main></div>
+<script>
+const colors=["#ff78ad","#ffe16a","#a68cff","#78d9cf","#ff9b73"],layer=document.getElementById("confetti");
+for(let i=0;i<42;i++){const p=document.createElement("span");p.className="confetti";p.style.left=Math.random()*100+"%";p.style.background=colors[i%colors.length];p.style.animationDelay=-(Math.random()*6)+"s";p.style.animationDuration=(3.5+Math.random()*3)+"s";layer.appendChild(p)}
+document.getElementById("open").addEventListener("click",()=>{document.getElementById("message").classList.add("show");document.getElementById("open").textContent="Surprise opened! 💖";document.getElementById("open").disabled=true});
+</script></body></html>
